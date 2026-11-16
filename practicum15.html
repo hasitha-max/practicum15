@@ -1,0 +1,228 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Craftsphere</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #dcebd1;
+            color: black;
+            transition: 0.3s;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            background-color: #16a2b8;
+            padding: 10px 20px;
+            transition: 0.3s;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            padding: 18px 25px;
+            display: block;
+            font-size: 18px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #e879b4;
+            min-width: 200px;
+            z-index: 10;
+        }
+
+        .dropdown-menu a {
+            padding: 18px 25px;
+            color: white;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown > a::after {
+            content: " ▼";
+            font-size: 12px;
+        }
+
+        .login {
+            border: 1px solid #287020;
+            margin-left: 10px;
+        }
+
+        .signup {
+            border: 1px solid #287020;
+            margin-left: 10px;
+        }
+
+        .navbar a:hover {
+            background-color: #333;
+        }
+
+        /* Theme Button */
+        .theme-btn {
+            margin-left: auto;
+            padding: 12px 18px;
+            background-color: white;
+            color: black;
+            border: 1px solid #287020;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .theme-btn:hover {
+            background-color: #ddd;
+        }
+
+        /* Center Banner */
+        .banner-container {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .banner-container img {
+            width: 525px;
+            max-width: 90%;
+            height: 525px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto;
+        }
+
+        /* Copyright */
+        .footer {
+            text-align: center;
+            font-size: 16px;
+            padding-bottom: 20px;
+        }
+
+        /* Dark Mode */
+        body.dark-mode {
+            background: #222831;
+            color: white;
+        }
+
+        body.dark-mode .navbar {
+            background-color: #393e46;
+        }
+
+        body.dark-mode .dropdown-menu {
+            background-color: #5c5470;
+        }
+
+        body.dark-mode .footer {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .navbar {
+                flex-wrap: wrap;
+                padding: 8px;
+            }
+
+            .navbar a {
+                padding: 12px;
+                font-size: 14px;
+            }
+
+            .theme-btn {
+                margin: 8px;
+            }
+
+            .banner-container img {
+                height: auto;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+
+        <div class="dropdown">
+            <a href="#">Craftsphere</a>
+            <div class="dropdown-menu">
+                <a href="#">About Us</a>
+                <a href="#">Our Story</a>
+                <a href="#">Our Creators</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Explore</a>
+            <div class="dropdown-menu">
+                <a href="#">Handmade Crafts</a>
+                <a href="#">DIY Projects</a>
+                <a href="#">Creative Ideas</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Ask-Us</a>
+            <div class="dropdown-menu">
+                <a href="#">Crafting Tips</a>
+                <a href="#">Project Help</a>
+                <a href="#">Material Suggestions</a>
+                <a href="#">Creative Ideas</a>
+            </div>
+        </div>
+
+        <a href="#" class="login">Log In</a>
+        <a href="#" class="signup">Sign Up</a>
+
+        <button class="theme-btn" onclick="changeTheme()">
+            🌙 Dark Mode
+        </button>
+
+    </nav>
+
+    <div class="banner-container">
+        <img src="craftsphere logo.jpg"
+             alt="Craftsphere Creative Banner">
+    </div>
+
+    <div class="footer">
+        &copy; Rights reserved by CRAFTSPHERE
+    </div>
+
+    <script>
+        function changeTheme() {
+
+            document.body.classList.toggle("dark-mode");
+
+            let button = document.querySelector(".theme-btn");
+
+            if (document.body.classList.contains("dark-mode")) {
+                button.innerHTML = "☀️ Light Mode";
+            }
+            else {
+                button.innerHTML = "🌙 Dark Mode";
+            }
+        }
+    </script>
+
+</body>
+</html>
+
